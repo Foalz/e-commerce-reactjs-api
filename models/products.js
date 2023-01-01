@@ -5,13 +5,14 @@ const ProductSchema = new Schema({
   title: { type: String, required: true, },
   description: { type: String, required: true },
   imageUrl: { type: String, required: true, },
+  sku: { type: String, required: true, index: true, unique: true, },
   date: { type: Date, default: Date.now },
   rating: { rate: { type: Number, }, count: { type: Number }, default: {
     rate: 0,
     count: 0,
   }},
   price: { type: Number, required: true, },
-  category: { type: [String], default: [], },
+  category: [{ type: String, }],
   stock: { type: Number, required: true, },
   brand: { type: String, },
 });
