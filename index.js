@@ -6,6 +6,29 @@ const cors = require('cors');
 const app = express();
 const database = require('./database');
 const Product = require('./models/products');
+const csv = require('csvtojson');
+require('dotenv').config();
+
+(async () => {
+  try {
+    const products_list = await Product.find({});
+    if (products_list.length === 0){
+      const readcsv = await csv()
+      .fromFile('./helpers/products.csv')
+      .then((json) => {
+        return json;
+      });
+      await Promise.all(readcsv.map(async (product) => {
+          let imgPath = product.imageUrl;
+          product.imageUrl = process.env.API_URL + process.env.PORT + '/assets/images' + imgPath;
+          const newProduct = new Product(product);
+          await newProduct.save();
+        }));
+    }
+  } catch (error) {
+    console.log(error);
+  }
+})();
 
 //Settings
 app.set('AppName', 'E-commerce project API');

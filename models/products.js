@@ -3,17 +3,17 @@ const { Schema } = mongoose;
 
 const ProductSchema = new Schema({
   title: { type: String, required: true, },
-  description: { type: String, required: true },
+  description: { type: String, },
   imageUrl: { type: String, required: true, },
   sku: { type: String, required: true, index: true, unique: true, },
   date: { type: Date, default: Date.now },
-  rating: { rate: { type: Number, }, count: { type: Number }, default: {
-    rate: 0,
-    count: 0,
-  }},
+  rating: { 
+    rate: { type: Number, default: 0, },
+    count: { type: Number, default: 0, },
+  },
   price: { type: Number, required: true, },
   category: [{ type: String, }],
-  stock: { type: Number, required: true, },
+  stock: { type: Number, default: 0, },
   brand: { type: String, },
 });
 

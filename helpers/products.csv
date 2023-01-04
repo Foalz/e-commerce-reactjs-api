@@ -1,0 +1,8 @@
+title,description,sku,price,category,stock,brand,imageUrl
+White AirPods,Up to 30 hours of listening time\nUp to 24 hours of talk time\n5 minutes in the case provides around 1 hour of listening time8 or around 1 hour of talk time,"001",120,e_commerce.product_category_0,100,Apple,/airpods.jpg
+Smart Watch,"Allows you to keep track of not only the time on the dial, but also your health, lifestyle and activity. ","002",50,e_commerce.product_category_0,500,Samsung,/smartwatch.jpg
+Bottle,Bottle,"003",30,,50,,/bottle.jpg
+Mouse,Mouse,"004",10,e_commerce.product_category_0,10,Genius,"/mouse.jpg"
+Headphones,Headphones,"005",45,e_commerce.product_category_0,200,SONY,"/headphones.jpg"
+Guitar,"Acoustic Guitar","006",1000,,20,YAMAHA,"/guitar.jpg"
+Keyboard,"Mechanic keyboard","007",90,e_commerce.product_category_0,20,"ASUS","/keyboard.jpg"
